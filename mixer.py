@@ -1,7 +1,7 @@
 import random
 import time
 from copy import copy
-from threading import Thread
+from threadwithqueue.threadwithqueue import ThreadWithQueue
 
 
 try:
@@ -15,7 +15,7 @@ import recipes
 from conf import RANDOM_MIN_INGREDIENTS, RANDOM_MAX_INGREDIENTS, RANDOM_MAX_VOLUME
 
 
-class Mixer(Thread):
+class Mixer(ThreadWithQueue):
     def __init__(self):
         super().__init__()
         self.gpio_setup()
