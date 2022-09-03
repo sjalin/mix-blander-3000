@@ -21,6 +21,14 @@ class Mixer(ThreadWithQueue):
         self.gpio_setup()
         self.pump_states = [False for _ in range(0, len(liquids.liquids))]
 
+    def run(self):
+        super().run()
+        while True:
+            msg = self.get_message(3000)
+            if msg:
+                print(msg)
+                self.make_drink(msg)
+
     @staticmethod
     def gpio_setup():
         print('GPIO setup')

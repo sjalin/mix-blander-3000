@@ -16,9 +16,8 @@ def main():
     # Will make a random drink since GT1 is not in the recipes
 
     mix = mixer.Mixer()
-
-    print('test')
-    mix.make_drink('GT1')
+    mix.start()
+    mix.message_queue.put('GT')
 
 
 if __name__ == '__main__':
