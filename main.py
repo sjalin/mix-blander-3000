@@ -14,7 +14,11 @@ def main():
 
     # Test code to run something in the beginning
     # Will make a random drink since GT1 is not in the recipes
-    mixer.make_drink('GT1')
+
+    mix = mixer.Mixer()
+
+    print('test')
+    mix.make_drink('GT1')
 
 
 if __name__ == '__main__':

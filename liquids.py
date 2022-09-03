@@ -1,6 +1,7 @@
 # Configuration of how the liquids are stored places in the contraption
 
-liquids = {'gin': 1,
+liquids = {'fulsprit': 0,
+           'gin': 1,
            'orange juice': 2,
            'russian water': 3,
            'tonic': 4,
