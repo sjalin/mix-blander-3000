@@ -3,7 +3,8 @@
 import liquids
 
 recipes = {'GT': [('gin', 1), ('tonic', 4)],
-           'Gin balalaika': [('gin', 1), ('orange juice', 4), ('russian water', 4)]}
+           'Gin balalaika': [('gin', 1), ('orange juice', 4), ('russian water', 4)],
+           'Fulgrogg': [('fanta', 1), ('rum', 2), ('gin', 1), ('punsch', 1)]}
 
 
 def test_recipes():
