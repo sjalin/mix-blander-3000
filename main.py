@@ -2,6 +2,8 @@ import liquids
 import recipes
 import mixer
 
+from flask_server import app as webapp
+
 
 def test_stuff():
     liquids.test_liquids()
@@ -13,11 +15,12 @@ def main():
     test_stuff()
 
     # Test code to run something in the beginning
-    # Will make a random drink since GT1 is not in the recipes
 
     mix = mixer.Mixer()
     mix.start()
-    mix.message_queue.put('GT')
+
+    webapp.setMixer(mix.message_queue)
+    webapp.run(port=80)
 
 
 if __name__ == '__main__':
