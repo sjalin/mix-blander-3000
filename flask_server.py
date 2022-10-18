@@ -12,6 +12,7 @@ class Webapp(Flask):
 app = Webapp(__name__)
 
 drinks = [(i, n) for i, n in enumerate(recipes)]
+drinks.append((len(drinks), 'Slumpgrogg'))
 
 
 @app.get("/")
