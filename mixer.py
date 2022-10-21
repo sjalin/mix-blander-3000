@@ -14,6 +14,16 @@ import liquids
 import recipes
 from conf import RANDOM_MIN_INGREDIENTS, RANDOM_MAX_INGREDIENTS, RANDOM_MAX_VOLUME
 
+gpio_mapping = {0: 5,
+                1: 6,
+                2: 13,
+                3: 19,
+                4: 26,
+                5: 21,
+                6: 20,
+                7: 16}
+
+
 
 class Mixer(ThreadWithQueue):
     def __init__(self):

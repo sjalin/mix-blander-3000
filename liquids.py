@@ -1,15 +1,13 @@
 # Configuration of how the liquids are stored places in the contraption
 
-liquids = {'fulsprit': 0,
+liquids = {'punsch': 0,
            'gin': 1,
            'orange juice': 2,
            'russian water': 3,
            'tonic': 4,
-           'water': 5,
+           'vodka': 5,
            'fanta': 6,
-           'rum': 7,
-           'vodka': 8,
-           'punsch': 9}
+           'rum': 7,}
 
 
 def test_liquids():
