@@ -20,7 +20,7 @@ def main():
     mix.start()
 
     webapp.setMixer(mix.message_queue)
-    webapp.run(port=80)
+    webapp.run(port=8080)
 
 
 if __name__ == '__main__':
