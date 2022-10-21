@@ -21,7 +21,10 @@ pip install flask
 git submoduile init
 git submodule update
 ```
-
+On raspberry pi
+```
+pip install RPi.GPIO
+```
 
 Autostart chrome on a raspberry pi:
 https://raspberrypi.stackexchange.com/questions/69204/open-chromium-full-screen-on-start-up
