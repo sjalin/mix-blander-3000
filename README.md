@@ -4,7 +4,7 @@ Code for drink mixing contraption
 
 ## Instructions 
 ```
-python3 -m venv venv"
+python3 -m venv venv
 ```
 Linux: 
 ```
@@ -17,5 +17,6 @@ venv\Scripts\activate
 Both:
 ```
 pip install flask
+git submoduile init
 git submodule update
 ```
