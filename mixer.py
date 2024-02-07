@@ -45,6 +45,18 @@ class Mixer(ThreadWithQueue):
             self._make_drink(msg[1])
         elif msg[0] == 'GUI':
             self._gui = msg[1]
+        elif msg[0] == 'start liquid':
+            try:
+                self.set_pump_state(liquids.liquids[msg[1]], True)
+                self._gui.to_log(f'Start pouring {msg[1]}')
+            except KeyError:
+                self.log.error(f'{msg[1]} does not exist')
+        elif msg[0] == 'stop liquid':
+            try:
+                self.set_pump_state(liquids.liquids[msg[1]], False)
+                self._gui.to_log(f'Stop pouring {msg[1]}')
+            except KeyError:
+                self.log.error(f'{msg[1]} does not exist')
 
     def _gpio_setup(self):
         self.log.info(f'{self.class_name}: GPIO setup')
@@ -52,7 +64,7 @@ class Mixer(ThreadWithQueue):
 
         for i in range(0, 8):
             GPIO.setup(gpio_mapping[i], GPIO.OUT)
-            GPIO.output(gpio_mapping[i], True)
+            self.set_pump_state(i, False)
 
     def _make_drink(self, drink_name):
         self._gui.set_progress(0)
