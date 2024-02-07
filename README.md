@@ -7,30 +7,32 @@ Ment to be built around a raspberry pi, the IO will assume that it is a RPI (oth
 ```
 python3 -m venv venv
 ```
-Linux: 
+### Linux: 
 ```
 source venv/bin/activate
 ```
-Windows: 
+### Windows: 
 ```
 venv\Scripts\activate
 ```
-Both:
+### Both:
 ```
 pip install -r requirements.txt
-pip install -r requirements_pi.txt # Only on raspberry pi
 git submoduile init
 git submodule update
 ```
-On raspberry pi
+### Raspberry pi
 ```
-pip install RPi.GPIO
+pip install -r requirements_pi.txt
 ```
+#### Edit kivy configuration
+This is because the touch screen "double clicks" by default
 
-Start the python program in tmux:
-run the attached tmux_start.sh at startup
-add 
+In ~/.kivy/config.ini change the [input]-section to:
+
 ```
-sudo -u pi bash /PATH/mix-blander-3000/tmux_start.sh &
+[input]
+%(name)s = probesysfs,provider=hidinput
+mouse = mouse
+hid_%(name)s = probesysfs,provider=hidinput
 ```
-to /etc/rc.local
